@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      x:Class="ScorePortal.UiComponents.MatchDetailsHeader"
+      Padding="16,4">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="18"></RowDefinition>
+        <RowDefinition Height="60"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+   
+    <Label x:Name="matchDate"  Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Text="sat, 9/22"></Label>
+    <Label x:Name="gameStatus"  Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Text="Full Time"></Label>
+   
+    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="8"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Spacing="0" Padding="0" Margin="0">
+                <StackLayout  Spacing="0" Padding="16,0,0,0" Margin="0" HorizontalOptions="StartAndExpand">
+                    <ffimage:CachedImage  x:Name="homeClubImg" Margin="0"  Aspect="AspectFit" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" VerticalOptions="Center"></ffimage:CachedImage>
+                    <Label x:Name="homeClubName" Text="Real madrid"></Label>
+                </StackLayout>
+                <Label x:Name="firstClubScore" 
+                       Text="0" HorizontalOptions="EndAndExpand" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center" 
+                       FontAttributes="Bold" 
+                       TextColor="White" 
+                       WidthRequest="40"                        
+                       VerticalOptions="Center"
+                       HeightRequest="40"
+                       BackgroundColor="{StaticResource PrimaryPurple}"></Label>    
+            </StackLayout>
+            <Label Text="-" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold"></Label>
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Spacing="0" Padding="0" Margin="0">
+                <Label x:Name="SecondClubScore" 
+                       Text="1" 
+                       VerticalOptions="Center"
+                       HeightRequest="40"
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"
+                       TextColor="White" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Start" 
+                       BackgroundColor="{StaticResource PrimaryPurple}" 
+                       WidthRequest="40"></Label>
+            <StackLayout  Spacing="0" Padding="0,0,16,0" Margin="0" HorizontalOptions="EndAndExpand">
+                    <ffimage:CachedImage x:Name="awayClubImg" Margin="0" Aspect="AspectFit" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center"></ffimage:CachedImage>
+                    <Label x:Name="awayClubName" Text="Real Madrid"></Label>
+                </StackLayout>
+                
+            </StackLayout>
+    </Grid>
+
+    <Grid Grid.Row="2" Grid.Column="0">
+        <ListView x:Name="homePlayerScored" HeightRequest="{Binding Height}" RowHeight="18" SeparatorVisibility="None" SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Margin="16,0,0,0" Text="{Binding .}"></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+    <Grid Grid.Row="2" Grid.Column="1">
+        <ListView x:Name="awayPlayerScored" HeightRequest="{Binding Height}" RowHeight="18" SeparatorVisibility="None" SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Margin="0,0,16,0" Text="{Binding .}" HorizontalOptions="EndAndExpand"></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Grid>

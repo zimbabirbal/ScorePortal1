@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ScorePortal.Views.AddTournament"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uicomponents="clr-namespace:ScorePortal.UiComponents"
+    NavigationPage.HasNavigationBar="True"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <uicomponents:DashboardHeader
+                x:Name="header"
+                BackgroundColor="{StaticResource SecondaryBlue}"
+                TitleColor="White"
+                TitleText="Tournament Information" />
+            <ScrollView HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <StackLayout Padding="24,0">
+                    <inputLayout:SfTextInputLayout
+                        Margin="0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Name"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Entry x:Name="nameEntry" TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Details"
+                        OutlineCornerRadius="18"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Editor
+                            x:Name="detailsEntry"
+                            HeightRequest="80"
+                            TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Start Date Time"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <StackLayout Padding="8,0" Orientation="Horizontal">
+                            <DatePicker x:Name="startDatePickerEntry" TextColor="{StaticResource SecondaryBlue}" />
+                            <TimePicker
+                                x:Name="startTimePickerEntry"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="{StaticResource SecondaryBlue}" />
+                        </StackLayout>
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="End Date Time"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <StackLayout Padding="8,0" Orientation="Horizontal">
+                            <DatePicker x:Name="endDatePickerEntry" TextColor="{StaticResource SecondaryBlue}" />
+                            <TimePicker
+                                x:Name="endTimePickerEntry"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="{StaticResource SecondaryBlue}" />
+                        </StackLayout>
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Image Url"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Entry x:Name="imageUrlEntry" TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Additional Info"
+                        OutlineCornerRadius="18"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Editor
+                            x:Name="addInfoEntry"
+                            HeightRequest="80"
+                            TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+
+
+                    <Button
+                        x:Name="btn"
+                        Margin="0,16"
+                        BackgroundColor="{StaticResource SecondaryBlue}"
+                        BorderColor="{StaticResource SecondaryBlue}"
+                        BorderWidth="1"
+                        Clicked="Button_Clicked"
+                        CornerRadius="36"
+                        HeightRequest="48"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Add"
+                        TextColor="White" />
+                    <uicomponents:UnderlineText HorizontalOptions="Center" Text="Advanced">
+                        <uicomponents:UnderlineText.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                        </uicomponents:UnderlineText.GestureRecognizers>
+                    </uicomponents:UnderlineText>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

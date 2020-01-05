@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ScorePortal.Views.AddTeam"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uicomponents="clr-namespace:ScorePortal.UiComponents"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <uicomponents:DashboardHeader
+                BackgroundColor="{StaticResource SecondaryBlue}"
+                TitleColor="White"
+                TitleText="Team Information" />
+            <ScrollView HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <StackLayout Padding="24,0">
+                    <inputLayout:SfTextInputLayout
+                        Margin="0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Name"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Entry x:Name="nameEntry" TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Estd Date"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <StackLayout Padding="16,0" Orientation="Horizontal">
+                            <DatePicker x:Name="estdDateEntry" TextColor="{StaticResource SecondaryBlue}" />
+                            <TimePicker
+                                x:Name="estdTimeEntry"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="{StaticResource SecondaryBlue}" />
+                        </StackLayout>
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Logo"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Entry x:Name="logoEntry" TextColor="{StaticResource SecondaryBlue}" />
+
+                    </inputLayout:SfTextInputLayout>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <inputLayout:SfTextInputLayout
+                            Grid.Column="0"
+                            Margin="0,8,0,0"
+                            ContainerType="Outlined"
+                            FocusedColor="{StaticResource SecondaryBlue}"
+                            Hint="Player Name"
+                            OutlineCornerRadius="36"
+                            UnfocusedColor="{StaticResource SecondaryBlue}">
+                            <Entry x:Name="playerNameEntry" TextColor="{StaticResource SecondaryBlue}" />
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout
+                            Grid.Column="1"
+                            Margin="0,8,0,0"
+                            ContainerType="Outlined"
+                            FocusedColor="{StaticResource SecondaryBlue}"
+                            Hint="Extra Info"
+                            OutlineCornerRadius="36"
+                            UnfocusedColor="{StaticResource SecondaryBlue}">
+                            <Entry x:Name="playerInfoEntry" TextColor="{StaticResource SecondaryBlue}" />
+                        </inputLayout:SfTextInputLayout>
+                    </Grid>
+
+                    <Button
+                        Margin="0,16"
+                        BackgroundColor="{StaticResource SecondaryBlue}"
+                        BorderColor="{StaticResource SecondaryBlue}"
+                        BorderWidth="1"
+                        Clicked="Add_Player_Button_Clicked"
+                        CornerRadius="36"
+                        HeightRequest="48"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Add player"
+                        TextColor="White" />
+                    <ListView
+                        x:Name="playerList"
+                        Margin="-24,0"
+                        ItemTapped="playerList_ItemTapped"
+                        SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            Margin="24,0,0,0"
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding Name}"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding Info, StringFormat=' |  {0}'}"
+                                            VerticalOptions="Center" />
+                                        <Image
+                                            Margin="24,0"
+                                            HeightRequest="12"
+                                            HorizontalOptions="EndAndExpand"
+                                            Source="icon_cross"
+                                            WidthRequest="12" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Additional Info"
+                        OutlineCornerRadius="18"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Editor
+                            x:Name="addInfoEntry"
+                            HeightRequest="80"
+                            TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <Label x:Name="httpresponse" Text="Help" />
+                    <Button
+                        x:Name="Test"
+                        Clicked="Test_Clicked"
+                        Text="Test" />
+                    <Image x:Name="testImage" />
+
+                    <Button
+                        x:Name="addTeam"
+                        Margin="0,16"
+                        BackgroundColor="{StaticResource SecondaryBlue}"
+                        BorderColor="{StaticResource SecondaryBlue}"
+                        BorderWidth="1"
+                        Clicked="addTeam_Clicked"
+                        CornerRadius="36"
+                        HeightRequest="48"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Add"
+                        TextColor="White" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
