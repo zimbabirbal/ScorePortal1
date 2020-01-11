@@ -1,4 +1,5 @@
-﻿using ScorePortal.Views;
+﻿using CloudinaryDotNet;
+using ScorePortal.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,11 +9,21 @@ namespace ScorePortal
 {
     public partial class App : Application
     {
+        public static Cloudinary CloudinaryInstance;
+        private const string _cloudinaryUsername = "";
+        private const string _cloudinaryApiKey = "";
+        private const string _cloudinaryApiSecret = "";
         public App()
         {
             InitializeComponent();
+            InitializeCloudinary(_cloudinaryUsername, _cloudinaryApiKey, _cloudinaryApiSecret);
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTgzMjYzQDMxMzcyZTM0MmUzMGgvcHkzMURNRDhMVzZCUnd6TmhUUVFPalVUNVFIb0ZIWDNiQkRucmNYSWM9");
             MainPage = new HomePage();
+        }
+
+        private void InitializeCloudinary(string cloudinaryUserName, string apiKey, string apiSecret)
+        {
+            CloudinaryInstance = new Cloudinary(new Account(cloudinaryUserName, apiKey, apiSecret));
         }
 
         protected override void OnStart()
