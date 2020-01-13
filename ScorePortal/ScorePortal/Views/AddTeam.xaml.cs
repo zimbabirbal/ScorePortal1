@@ -81,6 +81,7 @@ namespace ScorePortal.Views
                 Folder = "ScoresPortal"
             };
             var uploadResult = await Task.Run<ImageUploadResult>(() => App.CloudinaryInstance.Upload(uploadParams));
+            var a = uploadResult.SecureUri.AbsoluteUri;
         }
 
         private async void GetTeamAsync()

@@ -10,15 +10,15 @@ namespace ScorePortal
     public partial class App : Application
     {
         public static Cloudinary CloudinaryInstance;
-        private const string _cloudinaryUsername = "";
-        private const string _cloudinaryApiKey = "";
-        private const string _cloudinaryApiSecret = "";
+        private const string _cloudinaryUsername = "zimba";
+        private const string _cloudinaryApiKey = "571126387921339";
+        private const string _cloudinaryApiSecret = "xE1mWU-4CN3Hg8Qwl81ZUX-MtFo";
         public App()
         {
             InitializeComponent();
             InitializeCloudinary(_cloudinaryUsername, _cloudinaryApiKey, _cloudinaryApiSecret);
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTgzMjYzQDMxMzcyZTM0MmUzMGgvcHkzMURNRDhMVzZCUnd6TmhUUVFPalVUNVFIb0ZIWDNiQkRucmNYSWM9");
-            MainPage = new HomePage();
+            MainPage = new Test();
         }
 
         private void InitializeCloudinary(string cloudinaryUserName, string apiKey, string apiSecret)
