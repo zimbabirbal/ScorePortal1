@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    x:Class="SportNews.Controls.PlayerWithName"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid ColumnSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Frame
+            Padding="0"
+            CornerRadius="40"
+            HeightRequest="40"
+            HorizontalOptions="Center"
+            IsClippedToBounds="True"
+            VerticalOptions="Center"
+            WidthRequest="40">
+            <ffimage:CachedImage
+                x:Name="img"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,0"
+                Aspect="Fill"
+                HorizontalOptions="FillAndExpand"
+                Source="default_cover"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="title"
+                Grid.Row="0"
+                FontAttributes="Bold"
+                FontSize="18"
+                LineBreakMode="TailTruncation"
+                Text="This is match between ARsennal and city" />
+            <Label
+                x:Name="subtitle"
+                Grid.Row="1"
+                LineBreakMode="TailTruncation"
+                MaxLines="2"
+                Text="hekkko shaj sfljlfdl  sdfslkffldfld " />
+        </Grid>
+    </Grid>
+</Frame>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    x:Class="SportNews.Controls.DashBoardEvent"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Name="frame"
+    Padding="0,0"
+    CornerRadius="0"
+    HeightRequest="240"
+    IsClippedToBounds="True">
+    <Grid
+        x:Name="grid"
+        Margin="0"
+        Padding="0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240" />
+        </Grid.RowDefinitions>
+
+        <Image
+            x:Name="img"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,0"
+            Aspect="Fill"
+            HorizontalOptions="FillAndExpand"
+            Source="game"
+            VerticalOptions="FillAndExpand" />
+
+        <Label
+            x:Name="titleText"
+            Grid.Row="0"
+            Grid.Column="0"
+            FontAttributes="Bold"
+            FontSize="38"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="Gorkhali Tournament"
+            TextColor="White"
+            VerticalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center" />
+
+    </Grid>
+
+
+</Frame>

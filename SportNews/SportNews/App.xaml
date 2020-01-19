@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="SportNews.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <!--  APP COLOR  -->
+        <Color x:Key="AppBackgroundColor">#1A1A1A</Color>
+        <Color x:Key="AppPrimaryColor">#FFC83C</Color>
+        <Color x:Key="AppTransparentColor">#CC1A1A1A</Color>
+        <Color x:Key="AppMutedColor">#7F7F7F</Color>
+        <Color x:Key="AppGrayColor">#B2B2B2</Color>
+        <Color x:Key="BlackBackgroundTransparent">#F71A1A1A</Color>
+        <Color x:Key="WhiteBackgroundTransparent">#E6FFFFFF</Color>
+        <Color x:Key="ButtonBorderColor">#999999</Color>
+        <!--  PRIMARY COLOR  -->
+        <Color x:Key="PrimaryGreen">#00A69C</Color>
+        <Color x:Key="PrimaryYellow">#FFC73C</Color>
+        <Color x:Key="PrimaryDisabledButton">#CFA438</Color>
+        <Color x:Key="PrimaryBlue">#73C8D2</Color>
+        <Color x:Key="PrimaryBlack">#000000</Color>
+        <Color x:Key="PrimaryGrey">#CCCCCC</Color>
+        <Color x:Key="PrimaryWhite">#FFFFFF</Color>
+        <Color x:Key="PrimaryRed">#EC1E28</Color>
+        <Color x:Key="PrimaryPurple">#8B008B</Color>
+        <Color x:Key="SecondaryGrey">#C4C4C4</Color>
+        <Color x:Key="SecondaryBlue">#4682b4</Color>
+
+        <!--  DASHBOARD  -->
+        <Color x:Key="DashboardTitleBackgroundColor">#DFFFFFFF</Color>
+        <Color x:Key="DashboardBoxviewColor">#E5E5E5</Color>
+        <Color x:Key="DashboardTextColor">#343434</Color>
+        <Color x:Key="DashboardBorderColor">#CCCCCC</Color>
+    </Application.Resources>
+</Application>

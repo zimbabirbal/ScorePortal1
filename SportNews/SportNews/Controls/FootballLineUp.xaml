@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportNews.Controls.FootballLineUp"
+             Padding="24,0">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="24"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="24"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="24"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Label x:Name="homePlayerNum" Grid.Column="0" Text="" HorizontalTextAlignment="Start"></Label>
+    <Label x:Name="homePlayerName" Grid.Column="1" Text="" HorizontalTextAlignment="Start"></Label>
+    <Label x:Name="awayPlayerName" Grid.Column="2" Text="" HorizontalTextAlignment="End"></Label>
+    <Label x:Name="awayPlayerNum" Grid.Column="3" Text="" HorizontalTextAlignment="End"></Label>
+</Grid>

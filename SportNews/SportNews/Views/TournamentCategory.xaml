@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SportNews.Views.TournamentCategory"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="{StaticResource SecondaryBlue}">
+                <Label
+                    Margin="24,12"
+                    FontSize="22"
+                    Text="Tournament Category"
+                    TextColor="White" />
+            </StackLayout>
+            <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout>
+                    <Button
+                        HeightRequest="200"
+                        Text="Add Category"
+                        WidthRequest="200" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

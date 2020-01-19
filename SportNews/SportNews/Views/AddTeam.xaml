@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SportNews.Views.AddTeam"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:SportNews.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    Shell.BackgroundColor="{StaticResource SecondaryBlue}"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Controls:DashboardHeader
+                x:Name="header"
+                Margin="0,0,0,0"
+                BackgroundColor="{StaticResource SecondaryBlue}"
+                ShowProgressIndicator="false"
+                TitleColor="White"
+                TitleText="Team Information" />
+            <ScrollView HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <StackLayout Padding="24,16">
+                    <Frame
+                        Padding="0"
+                        CornerRadius="8"
+                        HeightRequest="160"
+                        HorizontalOptions="Center"
+                        IsClippedToBounds="True"
+                        VerticalOptions="Center"
+                        WidthRequest="160">
+                        <Image
+                            x:Name="imgLogo"
+                            Aspect="AspectFill"
+                            Source="xamarin_logo" />
+                    </Frame>
+                    <Button
+                        x:Name="uploadLogo"
+                        Margin="0,16"
+                        BackgroundColor="{StaticResource SecondaryBlue}"
+                        BorderColor="{StaticResource SecondaryBlue}"
+                        BorderWidth="1"
+                        Clicked="uploadLogo_Clicked"
+                        CornerRadius="36"
+                        HeightRequest="48"
+                        HorizontalOptions="Center"
+                        Text="Add Logo"
+                        TextColor="White" />
+                    <inputLayout:SfTextInputLayout
+                        Margin="0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Name"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Entry x:Name="nameEntry" TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Estd Date"
+                        OutlineCornerRadius="36"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <StackLayout Padding="16,0" Orientation="Horizontal">
+                            <DatePicker x:Name="estdDateEntry" TextColor="{StaticResource SecondaryBlue}" />
+                            <TimePicker
+                                x:Name="estdTimeEntry"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="{StaticResource SecondaryBlue}" />
+                        </StackLayout>
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout
+                        Margin="0,8,0,0"
+                        ContainerType="Outlined"
+                        FocusedColor="{StaticResource SecondaryBlue}"
+                        Hint="Additional Info"
+                        OutlineCornerRadius="18"
+                        UnfocusedColor="{StaticResource SecondaryBlue}">
+                        <Editor
+                            x:Name="addInfoEntry"
+                            HeightRequest="120"
+                            TextColor="{StaticResource SecondaryBlue}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <Button
+                        x:Name="addTeam"
+                        Margin="0,16"
+                        BackgroundColor="{StaticResource SecondaryBlue}"
+                        BorderColor="{StaticResource SecondaryBlue}"
+                        BorderWidth="1"
+                        Clicked="addTeam_Clicked"
+                        CornerRadius="36"
+                        HeightRequest="48"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Add"
+                        TextColor="White" />
+                    <Controls:UnderlineText
+                        x:Name="advanced"
+                        HorizontalOptions="Center"
+                        Text="Advanced">
+                        <Controls:UnderlineText.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                        </Controls:UnderlineText.GestureRecognizers>
+                    </Controls:UnderlineText>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

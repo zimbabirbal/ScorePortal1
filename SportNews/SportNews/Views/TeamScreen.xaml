@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SportNews.Views.TeamScreen"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SportNews.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    Shell.BackgroundColor="{StaticResource SecondaryBlue}"
+    mc:Ignorable="d">
+    <Shell.TitleView>
+        <controls:DashboardHeader
+            x:Name="header"
+            Margin="0,0,0,0"
+            BackgroundColor="{StaticResource SecondaryBlue}"
+            ShowProgressIndicator="False"
+            TitleColor="White"
+            TitleText="Team Information" />
+    </Shell.TitleView>
+    <ContentPage.Resources>
+        <sfPopup:SfPopupLayout x:Key="AlertDialog" x:Name="rpop">
+            <sfPopup:SfPopupLayout.PopupView>
+                <sfPopup:PopupView
+                    AcceptButtonText="Cancel"
+                    AppearanceMode="OneButton"
+                    DeclineButtonText="CANCEL"
+                    HeightRequest="200"
+                    ShowHeader="False">
+                    <sfPopup:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <Grid Padding="15,20,0,0" BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="30" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Players">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1"
+                                            Tapped="Players_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label
+                                    Grid.Row="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Edit">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1"
+                                            Tapped="Edit_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label
+                                    x:Name="delete"
+                                    Grid.Row="2"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Delete">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Delete_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </DataTemplate>
+                    </sfPopup:PopupView.ContentTemplate>
+
+                </sfPopup:PopupView>
+            </sfPopup:SfPopupLayout.PopupView>
+        </sfPopup:SfPopupLayout>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout x:Name="layout">
+            <ListView
+                x:Name="clsView"
+                HasUnevenRows="False"
+                ItemTapped="clsView_ItemTapped"
+                RowHeight="160"
+                SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <controls:TitleWithImageView
+                                LeftImage="{Binding ImageUrl}"
+                                SubTitleText="{Binding Description}"
+                                TitleText="{Binding Name}"
+                                VerticalOptions="CenterAndExpand" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                x:Name="addBtn"
+                Margin="24,16"
+                BackgroundColor="{StaticResource SecondaryBlue}"
+                BorderColor="{StaticResource SecondaryBlue}"
+                BorderWidth="1"
+                Clicked="addBtn_Clicked"
+                CornerRadius="36"
+                HeightRequest="48"
+                HorizontalOptions="FillAndExpand"
+                Text="Add"
+                TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

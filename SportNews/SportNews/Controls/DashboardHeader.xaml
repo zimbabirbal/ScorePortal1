@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="SportNews.Controls.DashboardHeader"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Margin="0"
+    Padding="0,0,0,0"
+    AutomationId="GrdHeader"
+    BackgroundColor="{StaticResource AppBackgroundColor}"
+    ColumnSpacing="0"
+    HorizontalOptions="Fill"
+    RowSpacing="0"
+    VerticalOptions="Fill">
+    <!--  xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"  -->
+    <Grid.RowDefinitions>
+        <RowDefinition Height="48" />
+        <RowDefinition Height="12" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="48" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="48" />
+    </Grid.ColumnDefinitions>
+
+    <BoxView
+        x:Name="leftIconClickArea"
+        Grid.Column="0"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill"
+        Color="Transparent" />
+
+    <Image
+        x:Name="iconLeft"
+        Grid.Column="0"
+        Margin="16,0,0,0"
+        Aspect="AspectFit"
+        AutomationId="AddNaswiScreen1_HeaderIconLeft"
+        HeightRequest="24"
+        HorizontalOptions="StartAndExpand"
+        VerticalOptions="Center"
+        WidthRequest="24">
+        <Image.Source>
+            <FileImageSource x:Name="leftIconFile" />
+        </Image.Source>
+    </Image>
+    <StackLayout
+        Grid.Column="1"
+        Margin="24,0"
+        AutomationId="AddNaswiScreen1_sl"
+        HorizontalOptions="FillAndExpand"
+        Spacing="0"
+        VerticalOptions="Center">
+        <Label
+            x:Name="lblTitle"
+            Margin="0,0,0,0"
+            AutomationId="AddNaswiScreen1_lblHeader"
+            FontSize="18"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            LineBreakMode="TailTruncation"
+            MaxLines="2"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center" />
+
+        <Label
+            x:Name="lblSubHeaderText"
+            FontSize="12"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            IsVisible="False"
+            LineBreakMode="TailTruncation"
+            VerticalOptions="CenterAndExpand"
+            VerticalTextAlignment="Start" />
+    </StackLayout>
+    <BoxView
+        x:Name="rightIconClickArea"
+        Grid.Column="2"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill"
+        Color="Transparent" />
+    <Image
+        x:Name="iconRight"
+        Grid.Column="2"
+        Margin="0,0,16,0"
+        Aspect="AspectFit"
+        AutomationId="AddNaswiScreen1_HeaderIconRight"
+        BackgroundColor="Transparent"
+        HeightRequest="24"
+        HorizontalOptions="EndAndExpand"
+        VerticalOptions="Center"
+        WidthRequest="24">
+        <Image.Source>
+            <FileImageSource x:Name="rightIconFile" />
+        </Image.Source>
+    </Image>
+    <BoxView
+        Grid.Row="1"
+        Grid.Column="0"
+        Grid.ColumnSpan="3"
+        BackgroundColor="{StaticResource DashboardBorderColor}"
+        HeightRequest="0.5"
+        VerticalOptions="EndAndExpand" />
+    <AbsoluteLayout
+        Grid.Column="1"
+        HorizontalOptions="EndAndExpand"
+        VerticalOptions="Center">
+        <ActivityIndicator
+            x:Name="ai"
+            Margin="0"
+            AutomationId="AddNaswiScreen1_ActivityIndicator"
+            HeightRequest="20"
+            HorizontalOptions="EndAndExpand"
+            IsRunning="True"
+            IsVisible="False"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="20"
+            Color="{StaticResource PrimaryWhite}" />
+        <!--<progressBar:SfCircularProgressBar
+                            HeightRequest="{DynamicResource DeviceSpecificProgressIndicatorHeight}"
+                           WidthRequest="{DynamicResource DeviceSpecificProgressIndicatorHeight}"
+                                               x:Name="ai"
+                                               AutomationId="AddNaswiScreen1_ActivityIndicator"
+                                               Progress="100"
+                                               IndicatorInnerRadius="0.63"
+                                               IndicatorOuterRadius="0.75"
+                                               ProgressColor="{StaticResource PrimaryYellow}"
+                                               TrackColor="Transparent"
+                                               ShowProgressValue="False"
+                                               IsIndeterminate="True"
+                                               IndeterminateEasingEffect="SinIn"
+                                               IndeterminateAnimationDuration="700"/>-->
+    </AbsoluteLayout>
+</Grid>

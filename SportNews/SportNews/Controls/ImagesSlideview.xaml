@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             x:Class="SportNews.Controls.ImagesSlideview">
+    <cards:CarouselView 
+        x:Name="carouselview"
+                    IsCyclical="false"
+                    SelectedIndex="{Binding CurrentIndex}">
+
+            <cards:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame                
+                        Margin="0"                                     
+                        VerticalOptions="Center"  
+                        HorizontalOptions="Fill"
+                        Padding="0" 
+                        HasShadow="false"
+                        IsClippedToBounds="true"
+                        CornerRadius="0">
+                        <ffimage:CachedImage x:Name="bgImg" Source="{Binding .}" Aspect="AspectFill" HeightRequest="240"/>
+                    </Frame>
+                </DataTemplate>
+            </cards:CarouselView.ItemTemplate>
+            <controls:IndicatorsControl ToFadeDuration="1500" />
+
+        </cards:CarouselView>
+</StackLayout>
